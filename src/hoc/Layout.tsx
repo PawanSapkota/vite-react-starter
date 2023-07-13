@@ -1,19 +1,26 @@
-import Footer from '@/components/footer/Footer'
-import Toolbar from '@/components/toolbar/Toolbar'
-import React from 'react'
+// import Footer from '@/components/footer/Footer'
+import Sidebar from "@/components/navigation/Sidebar";
+import Toolbar from "@/components/navigation/Toolbar";
+
+import React from "react";
 
 type PropsType = {
-    children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: PropsType) => {
-    return (
-        <div>
-            <Toolbar />
-            {children}
-            <Footer />
-        </div>
-    )
-}
+  return (
+    <div className="grid grid-cols-12 ">
+      <div className="col-span-2 bg-[#263544] text-[#B7C0CD]">
+        <Sidebar />
+      </div>
+      <div className="col-span-10 bg-[#f2f7fb] ">
+        <Toolbar />
+        {children}
+      </div>
+      {/* <Footer /> */}
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;
